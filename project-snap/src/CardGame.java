@@ -10,7 +10,7 @@ public class CardGame {
     public CardGame(ArrayList<Card> deckOfCards, String name) {
         this.deckOfCards = deckOfCards;
         this.name = name;
-        String[] suits = {"\u2665", "\u2663", "\u2666", "\u2660", };
+        String[] suits = {"♥", "♣", "♦", "♠", };
         String[] symbols = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
         int[] values = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
 
@@ -40,7 +40,7 @@ public class CardGame {
 
     public ArrayList<Card> sortDeckIntoSuits() {
     Collections.sort(deckOfCards, (a, b) -> {
-        if (!a.suit.equals(b.suit)) {
+        if (!a.getSuit().equals(b.getSuit())) {
             return a.getSuit().compareTo(b.getSuit());
         } else {
             return a.getValue() - b.getValue();
